@@ -23,7 +23,7 @@ import java.util.UUID;
 public class Control extends AppCompatActivity {
 
     ImageButton btnPravo, btnLevo, btnDesno;
-    Button btnDis;
+    Button btnDis, btn1, btn2, btn3, btn4;
     String address = null;
     private ProgressDialog progress;
     BluetoothAdapter myBluetooth = null;
@@ -43,6 +43,10 @@ public class Control extends AppCompatActivity {
         btnLevo = findViewById(R.id.btnLevo);
         btnDesno = findViewById(R.id.btnDesno);
         btnDis = findViewById(R.id.btnDisc);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
 
         new ConnectBT().execute();
 
@@ -72,10 +76,6 @@ public class Control extends AppCompatActivity {
                     mHandler.postDelayed(this, 100);
                 }
             };
-        });
-
-        btnPravo.setOnClickListener(e -> {
-            akcija('s');
         });
 
         btnLevo.setOnTouchListener(new View.OnTouchListener(){
@@ -135,6 +135,28 @@ public class Control extends AppCompatActivity {
 
         btnDis.setOnClickListener(e ->{
             disconnect();
+        });
+
+
+        btnPravo.setOnClickListener(e -> {
+            akcija('s');
+        });
+
+
+        btn1.setOnClickListener(e -> {
+            akcija('1');
+        });
+
+        btn2.setOnClickListener(e -> {
+            akcija('2');
+        });
+
+        btn3.setOnClickListener(e -> {
+            akcija('3');
+        });
+
+        btn4.setOnClickListener(e -> {
+            akcija('4');
         });
     }
 
