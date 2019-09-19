@@ -59,7 +59,7 @@ public class Control extends AppCompatActivity {
                     case MotionEvent.ACTION_DOWN:
                         if (mHandler != null) return true;
                         mHandler = new Handler();
-                        mHandler.postDelayed(mAction, 100);
+                        mHandler.postDelayed(mAction, 20);
                         break;
                     case MotionEvent.ACTION_UP:
                         if (mHandler == null) return true;
@@ -73,7 +73,7 @@ public class Control extends AppCompatActivity {
             Runnable mAction = new Runnable() {
                 @Override public void run() {
                     akcija('p');
-                    mHandler.postDelayed(this, 100);
+                    mHandler.postDelayed(this, 20);
                 }
             };
         });
@@ -86,7 +86,7 @@ public class Control extends AppCompatActivity {
                     case MotionEvent.ACTION_DOWN:
                         if (mHandler != null) return true;
                         mHandler = new Handler();
-                        mHandler.postDelayed(mAction, 30);
+                        mHandler.postDelayed(mAction, 20);
                         break;
                     case MotionEvent.ACTION_UP:
                         if (mHandler == null) return true;
@@ -114,7 +114,7 @@ public class Control extends AppCompatActivity {
                     case MotionEvent.ACTION_DOWN:
                         if (mHandler != null) return true;
                         mHandler = new Handler();
-                        mHandler.postDelayed(mAction, 30);
+                        mHandler.postDelayed(mAction, 20);
                         break;
                     case MotionEvent.ACTION_UP:
                         if (mHandler == null) return true;
@@ -128,7 +128,7 @@ public class Control extends AppCompatActivity {
             Runnable mAction = new Runnable() {
                 @Override public void run() {
                     akcija('d');
-                    mHandler.postDelayed(this, 30);
+                    mHandler.postDelayed(this, 20);
                 }
             };
         });
@@ -142,9 +142,12 @@ public class Control extends AppCompatActivity {
             akcija('s');
         });
 
+        btnLevo.setOnClickListener(e -> {
+            akcija('s');
+        });
 
-        btn1.setOnClickListener(e -> {
-            akcija('1');
+        btnDesno.setOnClickListener(e -> {
+            akcija('s');
         });
 
         btn2.setOnClickListener(e -> {
